@@ -13,6 +13,7 @@ app.use(express.json());
 // Share or create a GET route for every file in the public folder (css, html, index.js)
 app.use(express.static('.public'));
 
+// Load routes
 app.use('/api', api_routes);
 
 app.listen(PORT, () => {
