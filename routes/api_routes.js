@@ -30,6 +30,8 @@ router.post('/api/notes', express.json(), (requestObj, responseObj) => {
     const notes = JSON.parse(fs.readFileSync('db.json'))
     const note = requestObj.body
     note.id = uuidv4()
+    notes.push(note)
+
     fs.writeFile ('db.json', JSON.stringify (notes), function (err) {
         if(err) {
             return console.log(err);
